@@ -63,7 +63,6 @@ public class Analisis
 			Semantico2(tokens.getInicio());
 			VerificarClase(tokens.getInicio());
 			VerificarClase(tokens.getInicio());
-			
 
 			if(!banderaclase){
 				impresion.add("Falta la inicialización de la clase!");
@@ -157,7 +156,7 @@ public class Analisis
 	}
 	
 
-
+	
 
 	public Token analisisSintactio(NodoDoble<Token> nodo) {
 
@@ -1229,7 +1228,9 @@ public class Analisis
 		return div;
 	}
 	
-	
+	public String getmisObjetos() {
+		return CodigoObjeto;
+	}
 	
 	public String jerarquias (int i, String aux){
 		

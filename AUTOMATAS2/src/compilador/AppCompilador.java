@@ -51,7 +51,7 @@ public class AppCompilador extends JFrame implements ActionListener{
 	}
 	
 	public AppCompilador() {
-		super("-----CLASICCO + -----");
+		super("-----CLASICO + -----");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		setLayout(new GridLayout(2,2));
