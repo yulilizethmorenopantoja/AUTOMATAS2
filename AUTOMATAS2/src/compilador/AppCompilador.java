@@ -51,7 +51,7 @@ public class AppCompilador extends JFrame implements ActionListener{
 	}
 	
 	public AppCompilador() {
-		super("-----CLASICO-----");
+		super("-----CLASICCO + -----");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		setLayout(new GridLayout(2,2));
@@ -108,7 +108,7 @@ public class AppCompilador extends JFrame implements ActionListener{
 		consola = new JTabbedPane();
 		tabla = new JTabbedPane();
 		tabla2 = new JTabbedPane();
-		codobj= new JTabbedPane();
+
 
 		documentos.addTab("Nuevo",barrita);
 		documentos.setToolTipText("Aqui se muestra el codigo");
@@ -116,15 +116,12 @@ public class AppCompilador extends JFrame implements ActionListener{
 		tokens=new JList<String>();
 		consola.addTab("Consola",new JScrollPane(tokens));
 		tabla.addTab("Tabla de simbolos",new JScrollPane(mitabla) );
-//		tabla2.addTab("Cuadruplos",new JScrollPane(mitabla2) );
+		tabla2.addTab("Cuadruplos",new JScrollPane(mitabla2) );
 		add(consola);
 		consola.setToolTipText("Aqui se muestra el resultado del analisis");
 		add(tabla);
 		add(btnAnalizar);
 		add(tabla2);
-		add(codobj);
-		codigo = new JList<String>();
-//		codobj.addTab("CODIGO OBJETO",new JScrollPane(codigo) );
 
 	}
 	@Override
@@ -133,7 +130,7 @@ public class AppCompilador extends JFrame implements ActionListener{
 			if(guardar()){
 				Analisis analisador = new Analisis(archivo.getAbsolutePath());
 				tokens.setListData(analisador.getmistokens().toArray( new String [0]));
-				codigo.setListData(analisador.getTabla3().toArray( new String [0] ));
+
 				modelo = new DefaultTableModel(new Object[0][0],titulos);
 				modelo2 = new DefaultTableModel(new Object[0][0],titulos2);
 
@@ -207,7 +204,7 @@ public class AppCompilador extends JFrame implements ActionListener{
 			bf.close();
 			fw.close();
 		}catch (Exception e) {
-			System.out.println("Houston tenemos un problema?");
+			System.out.println("Se a presentado un problema");
 			return false;
 		}
 		return true;
